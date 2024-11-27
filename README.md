@@ -26,8 +26,6 @@ The frontend is built using modern web technologies for an efficient and respons
     ```bash
     npm install
 
-
-
 3. **Start the Development Server**:
     ```bash
     npm start
@@ -35,8 +33,6 @@ The frontend is built using modern web technologies for an efficient and respons
 4. **Build for Production**:
      ```bash
      npm run build
-
-
 
 ## Usage 🚀
 
