@@ -6,7 +6,7 @@ Second Brain is a web application that allows users to store and organize import
 - **Save Content**: Store important post links and videos from YouTube and Twitter.  
 - **Organize & Revisit**: Easily revisit saved content anytime.  
 - **Share Your Brain**: Share your curated content collection with friends.  
-- **Responsive UI**: Optimized for both desktop and mobile views.  
+- **Responsive UI**: Optimized for desktop .  
 
 ## Tech Stack 🛠️
 The frontend is built using modern web technologies for an efficient and responsive user experience:
