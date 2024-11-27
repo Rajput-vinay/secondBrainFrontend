@@ -19,7 +19,7 @@ The frontend is built using modern web technologies for an efficient and respons
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/second-brain-frontend.git
+   git clone https://github.com/Rajput-vinay/secondBrainFrontend.git
    cd second-brain-frontend
 
 2. **Install Dependencies:**:
