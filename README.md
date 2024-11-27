@@ -1,51 +1,55 @@
-# React + TypeScript + Vite
+# Second Brain Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Second Brain is a web application that allows users to store and organize important links and videos from platforms like YouTube and Twitter. It serves as a personal knowledge hub where users can revisit saved content later and share their curated "brain" with friends.
 
-Currently, two official plugins are available:
+## Features ✨
+- **Save Content**: Store important post links and videos from YouTube and Twitter.  
+- **Organize & Revisit**: Easily revisit saved content anytime.  
+- **Share Your Brain**: Share your curated content collection with friends.  
+- **Responsive UI**: Optimized for both desktop and mobile views.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack 🛠️
+The frontend is built using modern web technologies for an efficient and responsive user experience:
+- **React.js**: For building interactive and dynamic user interfaces.
+- **TypeScript & JavaScript**: For scalable and type-safe development.
+- **TailwindCSS**: For rapid styling and design.
+- **React Router DOM**: For seamless navigation between different pages.
 
-## Expanding the ESLint configuration
+## Installation ⚙️
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-username/second-brain-frontend.git
+   cd second-brain-frontend
 
-- Configure the top-level `parserOptions` property like this:
+2. **Install Dependencies:**:
+    ```bash
+    npm install
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+3. **Start the Development Server**:
+    ```bash
+    npm start
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
-# secondBrainFrontend
+4. **Build for Production**:
+     ```bash
+     npm run build
+
+
+
+## Usage 🚀
+
+- **Save Links**: Add YouTube and Twitter links to your collection.
+- **View Collection**: Browse through your saved items on your dashboard.
+- **Share with Friends**: Generate a shareable link to let others see your curated brain.
+
+## License 📜
+This project is licensed under the [MIT License](LICENSE).
+
+## Contact 📬
+For feedback or inquiries, feel free to reach out:
+
+- **Email**: [vinayrajput2004vr@gmail.com](mailto:vinayrajput2004vr@gmail.com)
+- **LinkedIn**: [Vinay Rajput](https://www.linkedin.com/in/vinay-rajput-984668227/)
+
