@@ -23,8 +23,8 @@ const Dropdown = ({ title,Reference }: DropdownInterface) => {
         <option value="" disabled>
           Select an option
         </option>
-        <option value="youtube">YouTube</option>
-        <option value="twitter">Twitter</option>
+        <option value="YOUTUBE">YOUTUBE</option>
+        <option value="TWITTER">TWITTER</option>
       </select>
     </div>
   );

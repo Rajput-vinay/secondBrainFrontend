@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef } from "react";
+import {useRef } from "react";
 import Xmax from "../icons/X-max";
 import Button from "./Button";
 import Dropdown from "./Dropdown";
@@ -6,56 +6,54 @@ import InputTag from "./InputTag";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { DataContext } from "../contextApi/dataContext";
 
 interface modelInterface {
-  isOpen: boolean; // Fixed type
+  isOpen: boolean;
   onClose: () => void;
 }
 
 const Model = ({ isOpen, onClose }: modelInterface) => {
-  const apiurl = import.meta.env.VITE_API_URL
-const linkRef = useRef<HTMLInputElement>()
-const titleRef = useRef<HTMLInputElement>()
-const tagsRef = useRef<HTMLInputElement>()
-const typeRef = useRef<HTMLInputElement>()
-const navigate = useNavigate()
+  const apiurl = import.meta.env.VITE_API_URL;
+  const linkRef = useRef<HTMLInputElement>();
+  const titleRef = useRef<HTMLInputElement>();
+  const tagsRef = useRef<HTMLInputElement>();
+  const typeRef = useRef<HTMLInputElement>();
+  const navigate = useNavigate();
 
+  const contentHandler = async () => {
+    const link = linkRef.current?.value;
+    const types = typeRef.current?.value;
+    const tags = tagsRef.current?.value;
+    const title = titleRef.current?.value;
 
-const contentHandler = async () => {
-  const link = linkRef.current?.value;
-  const types = typeRef.current?.value;
-  const tags = tagsRef.current?.value;
-  const title = titleRef.current?.value; 
+    if (!title || !types || !tags || !link) {
+      toast.error("All fields are required");
+      return;
+    }
 
-  if (!title || !types || !tags || !link) {
-    toast.error("All fields are required");
-    return; 
-  }
-
-  try {
-    const response = await axios.post(
-      `${apiurl}/content`,
-      {
-        link,
-        types,
-        title,
-        tags,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`, // Corrected token access
+    try {
+      const response = await axios.post(
+        `${apiurl}/content`,
+        {
+          link,
+          types,
+          title,
+          tags,
         },
-      }
-    );
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`, // Corrected token access
+          },
+        }
+      );
 
-    toast.success("Successfully added your content");
-    navigate("/dashboard");
-    onClose(); 
-  } catch (error) {
-    toast.error("Failed to add content. Please try again.");
-  }
-};
+      toast.success("Successfully added your content");
+      navigate("/dashboard");
+      onClose();
+    } catch (error) {
+      toast.error("Failed to add content. Please try again.");
+    }
+  };
 
   if (!isOpen) return null;
 
@@ -65,12 +63,12 @@ const contentHandler = async () => {
       onClick={onClose}
     >
       <div
-        className="bg-white p-5 border rounded-md w-96"
-        onClick={(e) => e.stopPropagation()} // Prevent closing on modal click
+        className="bg-white p-5 border rounded-md w-full sm:w-96 md:w-1/2 lg:w-1/3 xl:w-1/4"
+        onClick={(e) => e.stopPropagation()} 
       >
         {/* Header */}
         <div className="flex justify-between items-center mb-4">
-          <div className="text-md font-extrabold pl-28">Add Your Content</div>
+          <div className="text-md font-extrabold pl-4 sm:pl-16">Add Your Content</div>
           <div className="text-gray-400 cursor-pointer" onClick={onClose}>
             <Xmax />
           </div>
@@ -86,7 +84,7 @@ const contentHandler = async () => {
 
         {/* Footer */}
         <div className="flex justify-center pt-4">
-          <Button variant="Primary" size="lg" title="Submit" onClick={contentHandler}   />
+          <Button variant="Primary" size="lg" title="Submit" onClick={contentHandler} />
         </div>
       </div>
     </div>
